@@ -4,9 +4,11 @@
 ##################################################################
 
 # base image
-FROM debian:stable
+FROM jsurf/rpi-raspbian:latest
 
-LABEL Description="vzlogger docker image" Maintainer="trebankosta@gmail.com" Version="0.1"
+LABEL Description="vzlogger docker image" Maintainer="jsurf@gmx.de" Version="0.1"
+
+RUN [ "cross-build-start" ]
 
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install sudo build-essential git-core cmake pkg-config subversion  \
@@ -23,3 +25,5 @@ RUN mkdir /cfg && cd /tmp && \
 VOLUME ["/cfg"]
 
 CMD /usr/local/bin/vzlogger --config /cfg/vzlogger.conf
+
+RUN [ "cross-build-end" ]
