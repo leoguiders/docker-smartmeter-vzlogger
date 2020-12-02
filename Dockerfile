@@ -12,7 +12,7 @@ RUN apt-get -y install sudo build-essential git-core cmake pkg-config subversion
 RUN mkdir /cfg && cd /tmp && \
     git clone https://github.com/volkszaehler/vzlogger.git && \
     cd vzlogger && \
-    touch /etc/systemd/system/vzlogger.service
+    touch /etc/systemd/system/vzlogger.service && \
     bash ./install.sh
 
 VOLUME ["/cfg"]
