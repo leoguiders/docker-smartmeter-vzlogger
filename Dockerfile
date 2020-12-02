@@ -15,7 +15,7 @@ RUN apt-get -y install sudo build-essential git-core cmake pkg-config subversion
     libjson-c-dev libleptonica-dev libunistring-dev dh-autoreconf
 
 RUN mkdir /cfg && cd /tmp && \
-    git clone https://github.com/treban/vzlogger.git && \
+    git clone https://github.com/volkszaehler/vzlogger.git && \
     cd vzlogger && \
     bash ./install.sh
 
