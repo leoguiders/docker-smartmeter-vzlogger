@@ -7,7 +7,7 @@ RUN apt-get -y install sudo build-essential git-core cmake pkg-config subversion
     libcurl4-openssl-dev libgnutls28-dev libsasl2-dev uuid-dev \
     libtool libssl-dev libgcrypt20-dev libmicrohttpd-dev libltdl-dev \
     libjson-c-dev libleptonica-dev libunistring-dev dh-autoreconf \
-    libmosquitto-dev
+    libmosquitto-dev libgpiod-dev
 
 RUN mkdir /cfg && cd /tmp && \
     git clone --branch gpiod https://github.com/wrichter/vzlogger.git && \
