@@ -10,7 +10,7 @@ RUN apt-get -y install sudo build-essential git-core cmake pkg-config subversion
     libmosquitto-dev
 
 RUN mkdir /cfg && cd /tmp && \
-    git clone https://github.com/volkszaehler/vzlogger.git && \
+    git clone --branch gpiod https://github.com/wrichter/vzlogger.git && \
     cd vzlogger && \
     touch /etc/systemd/system/vzlogger.service && \
     bash ./install.sh
