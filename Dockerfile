@@ -14,6 +14,8 @@ RUN mkdir /cfg && cd /tmp && \
     cd vzlogger && \
     touch /etc/systemd/system/vzlogger.service && \
     bash ./install.sh
+    
+RUN setcap 'cap_sys_nice=eip' /usr/local/bin/vzlogger
 
 VOLUME ["/cfg"]
 
